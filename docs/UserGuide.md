@@ -121,6 +121,7 @@ Phone requirements:
 Duplicate handling:
 
 * A client is considered a duplicate only when both their normalized name and phone number match an existing client.
+* Eight-digit phone numbers are treated as Singapore numbers when comparing clients: `81234567` and `+65 8123 4567` match. The country code remains as entered for display. Other country codes are distinct.
 * Clients with the same name but different phone numbers can be added.
 * A phone number can be shared by different clients, but the application displays a warning when it is reused.
 
