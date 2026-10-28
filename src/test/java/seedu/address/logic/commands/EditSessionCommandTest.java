@@ -53,7 +53,7 @@ public class EditSessionCommandTest {
 
         String expectedMessage = String.format(EditSessionCommand.MESSAGE_SUCCESS, aliceWithSession.getName(), DATE);
 
-        assertCommandSuccess(command, model, new CommandResult(expectedMessage, updatedAlice), expectedModel);
+        assertCommandSuccess(command, model, expectedMessage, expectedModel);
     }
 
     @Test
@@ -67,7 +67,7 @@ public class EditSessionCommandTest {
 
         String expectedMessage = String.format(EditSessionCommand.MESSAGE_SUCCESS, aliceWithSession.getName(), DATE);
 
-        assertCommandSuccess(command, model, new CommandResult(expectedMessage, updatedAlice), expectedModel);
+        assertCommandSuccess(command, model, expectedMessage, expectedModel);
     }
 
     @Test
@@ -83,9 +83,7 @@ public class EditSessionCommandTest {
         EditSessionCommand command = new EditSessionCommand(
                 PersonSelector.byId(original.getId()), DATE, UPDATED_NOTE);
         assertCommandSuccess(command, model,
-                new CommandResult(String.format(EditSessionCommand.MESSAGE_SUCCESS, original.getName(), DATE),
-                        original.withSessions(List.of(earlier, new Session(DATE, UPDATED_NOTE), later))),
-                expectedModel);
+                String.format(EditSessionCommand.MESSAGE_SUCCESS, original.getName(), DATE), expectedModel);
     }
 
     @Test
@@ -99,7 +97,7 @@ public class EditSessionCommandTest {
 
         String expectedMessage = String.format(EditSessionCommand.MESSAGE_SUCCESS, aliceWithSession.getName(), DATE);
 
-        assertCommandSuccess(command, model, new CommandResult(expectedMessage, updatedAlice), expectedModel);
+        assertCommandSuccess(command, model, expectedMessage, expectedModel);
     }
 
     @Test

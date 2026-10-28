@@ -40,7 +40,7 @@ public class AddSessionCommandTest {
 
         String expectedMessage = String.format(AddSessionCommand.MESSAGE_SUCCESS, ALICE.getName(), DATE);
 
-        assertCommandSuccess(command, model, new CommandResult(expectedMessage, updatedAlice), expectedModel);
+        assertCommandSuccess(command, model, expectedMessage, expectedModel);
     }
 
     @Test
@@ -52,7 +52,7 @@ public class AddSessionCommandTest {
 
         String expectedMessage = String.format(AddSessionCommand.MESSAGE_SUCCESS, ALICE.getName(), DATE);
 
-        assertCommandSuccess(command, model, new CommandResult(expectedMessage, updatedAlice), expectedModel);
+        assertCommandSuccess(command, model, expectedMessage, expectedModel);
     }
 
     @Test
@@ -64,7 +64,7 @@ public class AddSessionCommandTest {
 
         String expectedMessage = String.format(AddSessionCommand.MESSAGE_SUCCESS, ALICE.getName(), DATE);
 
-        assertCommandSuccess(command, model, new CommandResult(expectedMessage, updatedAlice), expectedModel);
+        assertCommandSuccess(command, model, expectedMessage, expectedModel);
     }
 
     @Test
